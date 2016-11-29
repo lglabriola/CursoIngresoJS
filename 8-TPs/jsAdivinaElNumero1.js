@@ -14,33 +14,41 @@ function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
 	 	
-	 var numeroSecreto=Math.floor((Math.random() * 100) + 1);
+	numeroSecreto=Math.floor((Math.random() * 100) + 1);//random
 
-		//alert(numeroSecreto);
-		
+		//alert(numeroSecreto);//alert para verificar
+	
+	contadorIntentos = 0;//ya le asigno el valor 0 al contador de intentos
 
 
 }
 
-function verificar()
+function verificar()//entra en acción luego de presionar el botón verificar
 {
 	var numero;
 	numero=document.getElementById('numero').value;
-	
+
 	if(numeroSecreto>numero)
 	{
-		alert('El número está mas abajo...');
-		else{
-			if(numeroSecreto<numero)
-			{
-				alert('El número está mas arriba...');
-			}
-			else{
-				alert('GANASTE!');
-				}	
-			
-		}
+		alert('El número está mas arriba...');
+		
 
 	}
+	else
+	{
+		if(numeroSecreto<numero)
+		{
+			alert('El número está mas abajo...');
+		}
+		else
+		{
+			alert('GANASTE!');
+		}	
+		
+	}
+	
+	contadorIntentos++;//incremento el numero de intentos
+	document.getElementById('intentos').value = contadorIntentos;//se graba el valor en intentos
+
 	
 }
